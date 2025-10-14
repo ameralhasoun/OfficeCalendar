@@ -5,6 +5,9 @@ using OfficeCalendar.Models;
 using Filter.UserRequired;
 using Microsoft.EntityFrameworkCore;
 
+namespace OfficeCalendar.Controllers;
+
+
 [Route("api/v1/AttendEvent")]
 public class AttendEventController : Controller
 {
@@ -116,6 +119,3 @@ public class AttendEventController : Controller
 
 }
 
-
-public record EditEventBody (int EventId, string Title, string Description, DateOnly EventDate,
-TimeSpan StartTime, TimeSpan EndTime, string Location, bool AdminApproval);

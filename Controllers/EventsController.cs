@@ -57,3 +57,7 @@ public class EventsController : Controller
         return deleteEvent ? Ok($"Event {eventId} has been deleted") : BadRequest($"Event {eventId} not found");
     }
 }
+
+
+public record EditEventBody (int EventId, string Title, string Description, DateOnly EventDate,
+TimeSpan StartTime, TimeSpan EndTime, string Location, bool AdminApproval);
