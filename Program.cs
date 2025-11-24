@@ -29,6 +29,7 @@ namespace OfficeCalendar
             builder.Services.AddScoped<IEventsService, EventsService>();
             builder.Services.AddScoped<IAttendEventService, AttendEventService>();
             builder.Services.AddScoped<IProfileService, ProfileService>();
+            builder.Services.AddScoped<IMessageService, MessageService>();
 
 
             builder.Services.Configure<LogFileOptions>(builder.Configuration.GetSection("LogFile"));
