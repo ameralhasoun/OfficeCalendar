@@ -5,13 +5,13 @@ using Filter.UserRequired;
 
 namespace OfficeCalendar.Controllers;
 
-[Route("api/v1/MessageScenario7a")]
-public class MessagesControllerScenario7a : Controller
+[Route("api/v1/Message")]
+public class MessagesController : Controller
 {
     private readonly IMessageService _messageService;
     private readonly IEventsService _eventService;
 
-    public MessagesControllerScenario7a(IMessageService messageService, IEventsService eventService)
+    public MessagesController(IMessageService messageService, IEventsService eventService)
     {
         _messageService = messageService;
         _eventService = eventService;
