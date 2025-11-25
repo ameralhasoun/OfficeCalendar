@@ -20,23 +20,16 @@ public class MessagesController : Controller
     private string? GetUserSessionKey()
         => HttpContext.Session.GetString("USER_SESSION_KEY");
 
-    [UserRequired]
+
+
     [HttpGet]
     public async Task<IActionResult> GetMessage()
     {
         int? userId = await _eventService.GetUserId(GetUserSessionKey());
-        if (userId == null) return BadRequest("User not found.");
+        var messages = await _messageService.GetMessagesByUserId((int)userId);
 
-        List<Message>? messages = null;
-
-        int totalMessages = messages.Count;
-        int readMessages = messages.Count(m => m.BeenRead);
-
-        return Ok(new
-        {
-            total = totalMessages,
-            read = readMessages,
-            ratio = 0
-        });
+        if (messages == null) return NoContent();
+        return Ok(messages);
     }
+
 }
