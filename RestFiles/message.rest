@@ -1,5 +1,5 @@
 // Get all messages sent or received by the currently logged-in user
-GET http://localhost:5097/api/v1/Message HTTP/1.1
+GET http://localhost:5097/api/v1/Message?isNotRead=true HTTP/1.1
 
 ###
 
